@@ -11,14 +11,14 @@ def get_input():
 
 
 def get_webhook(web_hook_file):
-    """Open the file containing the webhook and read the url,
+    """Open the file containing the webhook and read the URL,
     which should be on a single line."""
     
     try:
         with open(web_hook_file) as f:
             return f.read()
     except(FileNotFoundError):
-        print(f"WARNING: '{web_hook_file}' file was not found.")
+        print(f"WARNING: The specified webhook file '{web_hook_file}' was not found.")
 
 
 if __name__ == "__main__":
@@ -26,7 +26,7 @@ if __name__ == "__main__":
     web_hook_url = get_webhook("web_hook_url.txt" )
     if not web_hook_url:
         print("""
-            A web hook url is needed to start this program.
+            A web hook URL is needed to start this program.
             See README.md
             """
             )
