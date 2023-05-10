@@ -58,7 +58,8 @@ To be used as a learning example, and a skeleton from which to build more comple
 
 *You can extend this example to send automated messages, or more meaningful data such as the output of a program you are running locally and have it echoed into a Discord channel.*
 
-**For Example:**
+**For Example: [discord-ttrpg-dice-roller](https://github.com/riecenaidoo/discord-ttrpg-dice-roller)**
+
 *A Dice rolling app for a Tabletop RPG with a GUI that lets a user click the dice they want to roll, and have the result of that roll be sent into a Discord channel for them to use in-game*
 
     Author: riecenaidoo
