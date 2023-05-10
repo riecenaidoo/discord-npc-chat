@@ -30,7 +30,7 @@ You'll need the following :
 
     - Create a new Webhook.
     - Select the Webhook.
-    - Copy the URL of this Webook and save it in a text file, e.g. `web_hook_url.txt`, in the same directory as this script.
+    - Copy the URL of this Webhook and save it in a text file, e.g. `web_hook_url.txt`, in the same directory as this script.
 
     ---  
 
