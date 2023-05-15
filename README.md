@@ -14,7 +14,7 @@ You'll need the following :
 
 1. Install Dependencies:
 
-    *It is recommended you setup a virtual environment to work in.*
+    *It is recommended you set up a virtual environment to work in.*
 
     Install `discordwebhook` via pip package management tool.
 
@@ -30,7 +30,7 @@ You'll need the following :
 
     - Create a new Webhook.
     - Select the Webhook.
-    - Copy the URL of this Webook and save it in a text file, e.g. `web_hook_url.txt`, in the same directory as this script.
+    - Copy the URL of this Webhook and save it in a text file, e.g. `web_hook_url.txt`, in the same directory as this script.
 
     ---  
 
@@ -40,7 +40,7 @@ You'll need the following :
 
     ---
 
-3. (Optional) Setup the script
+3. (Optional) Set up the script
 
     *If you saved the file in a different folder, or under a different file name, you'll need to edit the script and pass the path to the file into the function `get_webhook()` in the main script.*
 
@@ -51,6 +51,7 @@ You'll need the following :
     - Type the messages you'd like to echo into the command line.
     - They will be sent via the Webhook and be displayed in the Discord Channel you've added the Webhook to.
     - Type `quit` to exit.
+    - Type `name=` followed by the Username you want the Webhook's messages to display from, or type `name=` by itself to set it to the default Webhook name.
 
 ## Usage
 
@@ -59,6 +60,6 @@ To be used as a learning example, and a skeleton from which to build more comple
 *You can extend this example to send automated messages, or more meaningful data such as the output of a program you are running locally and have it echoed into a Discord channel.*
 
 **For Example:**
-*A Dice rolling app for a Tabletop RPG with a GUI that lets a user click the dice they want to roll, and have the result of that roll be sent into a Discord channel for them to use in-game*
+*Dice rolling app for a Tabletop RPG with a GUI that lets a user click the dice they want to roll, and have the result of that roll be sent into a Discord channel for them to use in-game*
 
     Author: riecenaidoo
