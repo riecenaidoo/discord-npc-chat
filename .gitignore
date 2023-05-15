@@ -1,2 +1,3 @@
-/venv
-web_hook_url.txt
+venv
+config
+.idea
