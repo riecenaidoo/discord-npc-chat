@@ -3,7 +3,7 @@
 .vscode
 
 # Environment
-venv
+.venv
 .env
 
 # Compiled Code

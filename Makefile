@@ -1,5 +1,5 @@
 PYTHON_HOME = python3
-VENV = venv
+VENV = .venv
 PYTHON = $(VENV)/bin/python3
 PIP = $(VENV)/bin/pip
 
@@ -7,8 +7,9 @@ PIP = $(VENV)/bin/pip
 .PHONY: run clean
 
 
+run: NPC?=
 run: $(VENV)/bin/activate
-	$(PYTHON) main.py
+	$(PYTHON) main.py --npc $(NPC)
 
 
 $(VENV)/bin/activate: requirements.txt
