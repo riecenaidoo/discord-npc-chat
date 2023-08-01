@@ -1,3 +1,10 @@
-venv
-config
+# Configurations
 .idea
+.vscode
+
+# Environment
+venv
+.env
+
+# Compiled Code
+__pycache__

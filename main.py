@@ -1,3 +1,6 @@
+import os
+
+from dotenv import load_dotenv
 from discordwebhook import Discord
 
 
@@ -10,30 +13,11 @@ def get_input():
     return user_input
 
 
-def get_webhook(web_hook_file):
-    """Open the file containing the webhook and read the URL,
-    which should be on a single line."""
-
-    try:
-        with open(web_hook_file) as f:
-            return f.read()
-    except FileNotFoundError:
-        print(f"WARNING: The specified webhook file '{web_hook_file}' was not found.")
-
-
 if __name__ == "__main__":
 
-    web_hook_url = get_webhook("config/web_hook_url.txt")
-    if not web_hook_url:
-        print("""
-            A web hook URL is needed to start this program.
-            See README.md
-            """
-              )
-        exit()
-
     print("Starting Session.")
-    discord = Discord(url=web_hook_url)  # Create the Webhook
+    load_dotenv()
+    discord = Discord(url=os.environ["DISCORD_WEBHOOK_URL"])  # Create the Webhook
 
     custom_name = None
     receiving_input = True

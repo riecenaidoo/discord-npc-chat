@@ -2,64 +2,32 @@
 
 This is an example of a Python script showing how you can use Discord Webhooks to create a tool that can echo messages from the user, received via the command line interface on their local machine, to a channel in a Discord server.
 
-## Requirements
-
-You'll need the following :
-
-- `Pip` (*To install dependencies*)
-- `Discord` Server (*To generate a webhook*)
-- `Python` (*To run the script*)
-
 ## Setup
 
-1. Install Dependencies:
+### Create a Webhook to use with the script.
 
-    *It is recommended you set up a virtual environment to work in.*
+*If you are not the server owner or admin, you may need additional permissions to follow the next steps.*
 
-    Install `discordwebhook` via pip package management tool.
+Select a channel in the server you'd like the messages to appear in.
 
-        pip install discordwebhook
+    Under Settings > Integrations > Webhooks > Create Webhook
 
-2. Create a Webhook to use with the script.
+- Create a new Webhook.
+- Select the Webhook.
+- Copy the URL of this Webhook and save it in a `.env` file as follows, `DISCORD_WEBHOOK_URL=`
 
-    *If you are not the server owner or admin, you may need additional permissions to follow the next steps.*
+---  
 
-    Select a channel in the server you'd like the messages to appear in.
+**Do not upload or share this text file.**
 
-        Under Settings > Integrations > Webhooks > Create Webhook
+*Anyone with access to the URL of your Webhook can send content through your Webhook, via that URL. So keep it safe and hidden.*
 
-    - Create a new Webhook.
-    - Select the Webhook.
-    - Copy the URL of this Webhook and save it in a text file as follows `config/web_hook_url.txt`, in the same directory as this script.
-
-    ---  
-
-    **Do not upload or share this text file.**
-
-    *Anyone with access to the URL of your Webhook can send content through your Webhook, via that URL. So keep it safe and hidden.*
-
-    ---
-
-3. (Optional) Set up the script
-
-    *If you saved the file in a different folder, or under a different file name, you'll need to edit the script and pass the path to the file into the function `get_webhook()` in the main script.*
-
-4. Run the script
-
-        python main.py
-
-    - Type the messages you'd like to echo into the command line.
-    - They will be sent via the Webhook and be displayed in the Discord Channel you've added the Webhook to.
-    - Type `quit` to exit.
-    - Type `name=` followed by the Username you want the Webhook's messages to display from, or type `name=` by itself to set it to the default Webhook name.
+---
 
 ## Usage
+Run the script (`make run` - *If you have GNU Make, Python3 and Pip package manager installed*)
 
-To be used as a learning example, and a skeleton from which to build more complex tools.
-
-*You can extend this example to send automated messages, or more meaningful data such as the output of a program you are running locally and have it echoed into a Discord channel.*
-
-**For Example:**
-*Dice rolling app for a Tabletop RPG with a GUI that lets a user click the dice they want to roll, and have the result of that roll be sent into a Discord channel for them to use in-game*
-
-    Author: riecenaidoo
+- Type the messages you'd like to echo into the command line.
+    - They will be sent via the Webhook and be displayed in the Discord Channel you've added the Webhook to.
+- Type `quit` to exit.
+- Type `name=` followed by the Username you want the Webhook's messages to display from, or type `name=` by itself to set it to the default Webhook name.
