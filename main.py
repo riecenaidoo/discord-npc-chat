@@ -1,6 +1,7 @@
 import os
 
 from dotenv import load_dotenv
+from argparse import ArgumentParser
 from discordwebhook import Discord
 
 
@@ -13,11 +14,24 @@ def get_input():
     return user_input
 
 
-if __name__ == "__main__":
+def get_npc():
+    """Get the name of the NPC that is communicating via this Webhook
+    from the command line argument -n/--npc"""
 
-    print("Starting Session.")
+    parser = ArgumentParser()
+    parser.add_argument("-n", "--npc",
+                        dest="npc",
+                        help="Specify the NPC that is communicating via this Webhook.",
+                        required=True)
+    return parser.parse_args().npc.upper()
+
+
+if __name__ == "__main__":
+    print("[INFO] Loading the NPCs.")
     load_dotenv()
-    discord = Discord(url=os.environ["DISCORD_WEBHOOK_URL"])  # Create the Webhook
+    print("[INFO] Getting the selected NPC.")
+    discord = Discord(url=os.environ[get_npc()])  # Create the Webhook
+    print("[SUCCESS]!")
 
     custom_name = None
     receiving_input = True
@@ -26,14 +40,18 @@ if __name__ == "__main__":
 
         if message.startswith("name="):
             custom_name = message.split("name=")[1]
-            if len(custom_name) == 0 and custom_name.isalnum():
+            if len(custom_name) == 0:
+                print("[INFO] Resetting name to default.")
                 custom_name = None
+            else:
+                print("[INFO] Updated NPC's name.")
             continue
 
         if message == "quit":
             receiving_input = False
+            print("[INFO] Quitting...")
             continue
 
         discord.post(username=custom_name, content=message)  # Send Message
 
-    print("Session Over.")
+    print("[END] Session Over!")
